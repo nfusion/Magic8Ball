@@ -26,6 +26,7 @@ if ($token != "abc123") {die('unauthorized token');}
 if ($team_domain != "nfusion") {die('unauthorized domain');}
 
 # authorized. output stuff.
-echo "hello world!";
+$response = array('text' => 'hello world!');
+echo json_encode($response);
 
 ?>

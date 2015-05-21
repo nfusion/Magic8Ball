@@ -151,6 +151,8 @@ app.post('/',function(req,res) {
 var server = app.listen(config.get("port"), function () {
 
   var host = server.address().address
+  // override
+  var host = 'mul.office.nfusion';
   var port = server.address().port
 
   console.log("\n    « Beseech and thou shall hath an answer »\n")

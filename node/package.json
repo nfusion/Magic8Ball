@@ -1,5 +1,9 @@
 {
   "name": "slack-magic-8-ball",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tchapi/slack-magic-8-ball.git"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

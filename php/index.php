@@ -25,17 +25,12 @@ foreach ($vars as $v) {
 if ($token != "abc123") {die('unauthorized token');}
 if ($team_domain != "nfusion") {die('unauthorized domain');}
 
-# authorized. output stuff.
-$allanswers = array(
-	'yes',
-	'no',
-	'maybe',
-	'perhaps',
-	'definitely'
-);
+# authorized. do stuff.
 
+require_once('answers.php');
 $answer = $allanswers[mt_rand(0, count($allanswers) - 1)];
 
+# output`
 $response = array('text' => $answer);
 header('Content-Type: application/json');
 echo json_encode($response);

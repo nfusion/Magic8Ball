@@ -33,7 +33,6 @@ var triggers = messages.map(
     );
 
 var slack = new Slack(config.get('domain'),config.get('api_token'));
-console.log(slack);
 app.get('/',function(req,res) {
 
     if (req.query.token != config.get('payload_token')) {
@@ -69,7 +68,7 @@ app.post('/save/:token',function(req,res) {
 })
 
 app.post('/',function(req,res) {
-
+console.log(req,res);
     if (req.body.token != config.get('payload_token')) {
 
         console.log("App.post Bad token :", req.body.token)

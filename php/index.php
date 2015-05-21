@@ -22,7 +22,7 @@ foreach ($vars as $v) {
 }
 
 # authorization
-if ($token != "abc123") {die('unauthorized token');}
+if ($token != "YjmPsdUYkH1tSJ2KDGQrfplq") {die('unauthorized token');}
 if ($team_domain != "nfusion") {die('unauthorized domain');}
 
 # authorized. do stuff.

@@ -34,7 +34,7 @@ $allanswers = array(
 	'definitely'
 );
 
-$answer = $allanswers(mt_rand(0, count($allanswers) - 1));
+$answer = $allanswers[mt_rand(0, count($allanswers) - 1)];
 
 $response = array('text' => $answer);
 header('Content-Type: application/json');

@@ -68,7 +68,7 @@ app.post('/save/:token',function(req,res) {
 })
 
 app.post('/',function(req,res) {
-console.log(req,res);
+console.log('Request: ',req);
     if (req.body.token != config.get('payload_token')) {
 
         console.log("App.post Bad token :", req.body.token)
@@ -151,7 +151,7 @@ var server = app.listen(config.get("port"), function () {
 
   var host = server.address().address
   // override
-  var host = 'mul.office.nfusion';
+  var host = 'magic8ball.nfusion.com';
   var port = server.address().port
 
   console.log("\n    « Beseech and thou shall hath an answer »\n")

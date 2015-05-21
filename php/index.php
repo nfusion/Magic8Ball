@@ -26,7 +26,18 @@ if ($token != "abc123") {die('unauthorized token');}
 if ($team_domain != "nfusion") {die('unauthorized domain');}
 
 # authorized. output stuff.
-$response = array('text' => 'hello world!');
+$allanswers = [
+	'yes',
+	'no',
+	'maybe',
+	'perhaps',
+	'definitely'
+];
+
+$answer = $allanswers[mt_rand(0, count($allanswers) - 1)];
+
+$response = array('text' => $answer);
+header('Content-Type: application/json');
 echo json_encode($response);
 
 ?>

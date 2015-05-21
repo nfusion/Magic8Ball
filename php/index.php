@@ -28,7 +28,7 @@ if ($token != "EIDBKtVwaarxySE2chmwGhAh") {die('unauthorized token');}
 # authorized. do stuff.
 
 require_once('answers.php');
-$answer = $allanswers[mt_rand(0, count($allanswers) - 1)];
+$answer = $user_name . ", " . $allanswers[mt_rand(0, count($allanswers) - 1)];
 
 # output`
 $response = array('text' => $answer);

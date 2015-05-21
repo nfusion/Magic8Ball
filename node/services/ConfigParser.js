@@ -1,49 +1,48 @@
-var fs = require('fs')
+var fs = require('fs');
 
 ConfigParser = function(options) {
 
   if (options && options.filename != "") {
-    this.filename = options.filename
+    this.filename = options.filename;
   } else {
-    this.filename = "config.json"
+    this.filename = "config.json";
   }
-
   try {
 
     // Read config file
-    this.data = fs.readFileSync(this.filename)
-    this.config = JSON.parse(this.data)
+    this.data = fs.readFileSync(this.filename);
+    this.config = JSON.parse(this.data);
 
   } catch (err) {
-    
-    throw err
+
+    if (err) console.log("ConfigParser error: ",err);
 
   }
 
 }
 
-var p = ConfigParser.prototype
+var p = ConfigParser.prototype;
 
 p.get = function(key) {
-  return this.config[key]
-}
+  return this.config[key];
+};
 
 p.getConfig = function() {
-  return this.config
-}
+  return this.config;
+};
 
 p.getJsonString = function() {
-  return this.data
-}
+  return this.data;
+};
 
 p.writeJsonObject = function(jsonObject) {
-  this.config = jsonObject
-  this.data = JSON.stringify(this.config)
+  this.config = jsonObject;
+  this.data = JSON.stringify(this.config);
   try {
-    fs.writeFileSync(this.filename, this.data)
+    fs.writeFileSync(this.filename, this.data);
   } catch(err) {
     
   }
-}
+};
 
-module.exports = ConfigParser
+module.exports = ConfigParser;

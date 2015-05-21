@@ -1,19 +1,19 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var nunjucks = require('nunjucks')
-var Slack = require('node-slack')
+var express = require('express');
+var bodyParser = require('body-parser');
+var nunjucks = require('nunjucks');
+var Slack = require('node-slack');
 
-var app = express()
+var app = express();
 
 // Add config module
-var CONFIG = require('./services/ConfigParser')
-var config = new CONFIG()
+var CONFIG = require('./services/ConfigParser');
+var config = new CONFIG();
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // static files
 app.use('/static', express.static(__dirname + '/public'));
@@ -24,18 +24,22 @@ nunjucks.configure('views', {
     express: app
 });
 
-var messagesConfig = new CONFIG({filename : 'messages.json'})
-var messages = messagesConfig.getConfig()
-var triggers = messages.map(function(e){return e.trigger})
+var messagesConfig = new CONFIG({filename : 'messages.json'});
+var messages = messagesConfig.getConfig();
+var triggers = messages.map(
+        function(e){
+            return e.trigger
+        }
+    );
 
-var slack = new Slack(config.get('domain'),config.get('api_token'))
+var slack = new Slack(config.get('domain'),config.get('api_token'));
 
 app.get('/',function(req,res) {
 
     if (req.query.token != config.get('payload_token')) {
 
-        console.log("Bad token :", req.query.token)
-        res.status(403).end()
+        console.log("Bad token :", req.query.token);
+        res.status(403).end();
 
     } else {
 

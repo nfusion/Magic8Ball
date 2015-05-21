@@ -1,13 +1,12 @@
-[
-    {
-    "trigger": "#triggerWord",
-    "username": "User name",
-    "icon_url": "http://url.of.picture",
+[{
+    "trigger": "#8",
+    "username": "Magic 8 Ball",
+    "icon_url": "http://findicons.com/files/icons/1700/2d/512/8_ball.png",
     "specific": [
       {
-        "username": "tom",
+        "username": "rfrace",
         "messages": [
-          "Hi Tom !"
+          "Hi Roger !"
         ]
       },
       {
@@ -23,4 +22,4 @@
         "Did you just say %word% ?", 
         "Hello %username% !"
     ]
-};
+}]

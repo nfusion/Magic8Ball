@@ -1,7 +1,7 @@
 {
   "port" : 3030,
   
-  "api_token" : "xoxb-something",
-  "payload_token" : "generated",
-  "domain" : "yourdomainWithoutSlackDotCom"
+  "api_token" : "xoxb-85B7F118DBABD",
+  "payload_token" : "D98F6B3F34D8946869D2D638A3985",
+  "domain" : "mul.office.nfusion"
 }

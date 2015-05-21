@@ -33,12 +33,11 @@ var triggers = messages.map(
     );
 
 var slack = new Slack(config.get('domain'),config.get('api_token'));
-
 app.get('/',function(req,res) {
 
     if (req.query.token != config.get('payload_token')) {
 
-        console.log("Bad token :", req.query.token);
+        console.log("App.get Bad token :", req.query.token);
         res.status(403).end();
 
     } else {
@@ -55,7 +54,7 @@ app.post('/save/:token',function(req,res) {
     
     if (req.params.token != config.get('payload_token')) {
 
-        console.log("Bad token :", req.params.token)
+        console.log("App.post save Bad token :", req.params.token)
         res.status(403).end()
 
     } else {
@@ -72,7 +71,7 @@ app.post('/',function(req,res) {
 
     if (req.body.token != config.get('payload_token')) {
 
-        console.log("Bad token :", req.body.token)
+        console.log("App.post Bad token :", req.body.token)
         res.status(403).end()
 
     } else if (req.body.user_id == 'USLACKBOT') { // Typical, for a bot.

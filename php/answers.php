@@ -2,6 +2,7 @@
 $allanswers = array(
 
 'Are you kidding?',
+'Are you serious?',
 'As I see it, yes.',
 'Ask again later.',
 'Better not tell you now.',
@@ -12,6 +13,8 @@ $allanswers = array(
 'Don\'t count on it.',
 'Forget about it.',
 'Go for it!',
+'Hell no.',
+'Hell yes.',
 'I have my doubts.',
 'It is certain.',
 'It is decidedly so.',
@@ -20,6 +23,7 @@ $allanswers = array(
 'Most likely.',
 'My reply is no.',
 'My sources say no.',
+'No.',
 'Outlook good.',
 'Outlook not so good.',
 'Outlook so so.',
@@ -33,7 +37,8 @@ $allanswers = array(
 'Yes, in due time.',
 'Yes.',
 'You may rely on it.',
-'You will have to wait.'
+'You will have to wait.',
+'You\'re joking, right?'
 
 );
 ?>

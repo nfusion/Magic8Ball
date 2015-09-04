@@ -33,8 +33,8 @@ $user_choice = strtolower(trim($trigger_word));
 $fulltext = strtolower(trim($text));
 
 #being silly
-if (($userchoice != $fulltext)) {
-	if ( (substr($fulltext,0,4)==rock) ) {
+if ($user_choice != $fulltext) {
+	if (substr($fulltext,0,4)==rock) {
 		$answer = ":rockon:";
 	}
 	else {

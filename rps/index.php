@@ -31,29 +31,38 @@ $computer = $choosefrom[$choice];
 
 $user_choice = strtolower(trim($trigger_word));
 
-# win/lose logic. copied from elsewhere, hence the ugly.
-$answer = "I choose $computer. ";
+#being smart
+if (in_array($user_choice, $choosefrom)) {
+	# win/lose logic. copied from elsewhere, hence the ugly.
+	$answer = "I choose $computer. ";
 
-if($user_choice == $computer){
-	$answer .= 'Result : draw.';
+	if($user_choice == $computer){
+		$answer .= 'draw.';
+	}
+	else if($user_choice == 'rock' && $computer == 'scissors'){
+		$answer .= 'You win.';
+	}
+	else if($user_choice == 'rock' && $computer == 'paper'){
+		$answer .= 'You lose.';
+	}
+	else if($user_choice == 'scissors' && $computer == 'rock'){
+		$answer .= 'You lose.';
+	}
+	else if($user_choice == 'scissors' && $computer == 'paper'){
+		$answer .= 'You win.';
+	}
+	else if($user_choice == 'paper' && $computer == 'rock'){
+		$answer .= 'You win.';
+	}
+	else if($user_choice == 'paper' && $computer == 'scissors'){
+		$answer .= 'You lose.';
+	}
 }
-else if($user_choice == 'rock' && $computer == 'scissors'){
-	$answer .= 'Result : You win.';
+elseif ( (substr($user_choice,0,4)==rock)) && (strlen($user_choice)>5) ) {
+	$answer = ":rockon:";
 }
-else if($user_choice == 'rock' && $computer == 'paper'){
-	$answer .= 'Result : You lose.';
-}
-else if($user_choice == 'scissors' && $computer == 'rock'){
-	$answer .= 'Result : You lose.';
-}
-else if($user_choice == 'scissors' && $computer == 'paper'){
-	$answer .= 'Result : You win.';
-}
-else if($user_choice == 'paper' && $computer == 'rock'){
-	$answer .= 'Result : You win.';
-}
-else if($user_choice == 'paper' && $computer == 'scissors'){
-	$answer .= 'Result : You lose.';
+else {
+	$answer = "Huh?";
 }
 
 # output

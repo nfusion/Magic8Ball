@@ -30,9 +30,10 @@ $choice = rand(0,2);
 $computer = $choosefrom[$choice];
 
 $user_choice = strtolower(trim($trigger_word));
+$fulltext = strtolower(trim($text));
 
 #being smart
-if (in_array($user_choice, $choosefrom)) {
+if ( (in_array($user_choice, $choosefrom)) && ($userchoice != $fulltext) ) {
 	# win/lose logic. copied from elsewhere, hence the ugly.
 	$answer = "I choose $computer. ";
 
@@ -58,7 +59,7 @@ if (in_array($user_choice, $choosefrom)) {
 		$answer .= 'You lose.';
 	}
 }
-elseif ( (substr($user_choice,0,4)==rock) && (strlen($user_choice)>5) ) {
+elseif ( (substr($fulltext,0,4)==rock) ) {
 	$answer = ":rockon:";
 }
 else {

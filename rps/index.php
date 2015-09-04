@@ -37,6 +37,9 @@ if ($user_choice != $fulltext) {
 	if ($fulltext == "rock me amadeus") {
 		$answer = ":musical_score: Amadeus, Amadeus, oh, oh, oh Amadeus :notes:";
 	}
+	elseif ($fulltext == "rock the casbah") {
+		$answer = ":musical_score: The shareef don't like it, Rockin' the Casbah, Rock the Casbah :notes:";
+	}
 	elseif (substr($fulltext,0,4)==rock) {
 		$answer = ":rockon:";
 	}

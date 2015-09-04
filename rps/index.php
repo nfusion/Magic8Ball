@@ -34,7 +34,10 @@ $fulltext = strtolower(trim($text));
 
 #being silly
 if ($user_choice != $fulltext) {
-	if (substr($fulltext,0,4)==rock) {
+	if ($fulltext == "rock me amadeus") {
+		$answer = "Amadeus, Amadeus, oh, oh, oh Amadeus";
+	}
+	elseif (substr($fulltext,0,4)==rock) {
 		$answer = ":rockon:";
 	}
 	else {

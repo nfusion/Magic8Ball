@@ -35,7 +35,7 @@ $fulltext = strtolower(trim($text));
 #being silly
 if ($user_choice != $fulltext) {
 	if ($fulltext == "rock me amadeus") {
-		$answer = "Amadeus, Amadeus, oh, oh, oh Amadeus";
+		$answer = ":musical_score: Amadeus, Amadeus, oh, oh, oh Amadeus :musical_note:";
 	}
 	elseif (substr($fulltext,0,4)==rock) {
 		$answer = ":rockon:";

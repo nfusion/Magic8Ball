@@ -32,9 +32,17 @@ $computer = $choosefrom[$choice];
 $user_choice = strtolower(trim($trigger_word));
 $fulltext = strtolower(trim($text));
 
-#being smart
-if ( (in_array($user_choice, $choosefrom)) && ($userchoice != $fulltext) ) {
-	# win/lose logic. copied from elsewhere, hence the ugly.
+#being silly
+if (($userchoice != $fulltext)) {
+	if ( (substr($fulltext,0,4)==rock) ) {
+		$answer = ":rockon:";
+	}
+	else {
+		$answer = "Huh?";
+	}
+}
+# win/lose logic. copied from elsewhere, hence the ugly.
+elseif ( (in_array($user_choice, $choosefrom)) ) {
 	$answer = "I choose $computer. ";
 
 	if($user_choice == $computer){
@@ -58,9 +66,6 @@ if ( (in_array($user_choice, $choosefrom)) && ($userchoice != $fulltext) ) {
 	else if($user_choice == 'paper' && $computer == 'scissors'){
 		$answer .= 'You lose.';
 	}
-}
-elseif ( (substr($fulltext,0,4)==rock) ) {
-	$answer = ":rockon:";
 }
 else {
 	$answer = "Huh?";

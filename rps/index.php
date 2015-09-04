@@ -42,7 +42,7 @@ if ($user_choice != $fulltext) {
 	}
 }
 # win/lose logic. copied from elsewhere, hence the ugly.
-elseif ( (in_array($user_choice, $choosefrom)) ) {
+elseif (in_array($user_choice, $choosefrom)) {
 	$answer = "I choose $computer. ";
 
 	if($user_choice == $computer){

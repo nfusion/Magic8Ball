@@ -40,6 +40,9 @@ if ($user_choice != $fulltext) {
 	elseif ($fulltext == "rock the casbah") {
 		$answer = ":musical_score: The shareef don't like it, Rockin' the Casbah, Rock the Casbah :notes:";
 	}
+	elseif ($fulltext == "rock and roll") {
+		$answer = ":musical_score: Been a long lonely, lonely, lonely, lonely, lonely time. Yes it has. :notes:";
+	}
 	elseif (substr($fulltext,0,4)==rock) {
 		$answer = ":rockon:";
 	}

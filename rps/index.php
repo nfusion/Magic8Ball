@@ -58,7 +58,7 @@ if (in_array($user_choice, $choosefrom)) {
 		$answer .= 'You lose.';
 	}
 }
-elseif ( (substr($user_choice,0,4)==rock)) && (strlen($user_choice)>5) ) {
+elseif ( (substr($user_choice,0,4)==rock) && (strlen($user_choice)>5) ) {
 	$answer = ":rockon:";
 }
 else {

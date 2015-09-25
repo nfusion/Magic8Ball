@@ -25,8 +25,8 @@ foreach ($vars as $v) {
 if ($token != "aBbwJUqA6wbreQfDYCI4refz") {die('unauthorized token');}
 
 # authorized. do stuff.
-$choosefrom = array(rock, paper, scissors);
-$choice = rand(0,2);
+$choosefrom = array(rock, paper, scissors, nuke);
+$choice = rand(0,3);
 $computer = $choosefrom[$choice];
 
 $user_choice = strtolower(trim($trigger_word));
@@ -54,7 +54,16 @@ if ($user_choice != $fulltext) {
 elseif (in_array($user_choice, $choosefrom)) {
 	$answer = "I choose $computer. ";
 
-	if($user_choice == $computer){
+	if($user_choice == 'nuke' && $computer == 'nuke'){
+		$answer .= 'We all lose.';
+	}
+	else if($user_choice != 'nuke' && $computer == 'nuke'){
+		$answer .= 'You lose.';
+	}
+	else if($user_choice == 'nuke' && $computer != 'nuke'){
+		$answer .= 'You win.';
+	}
+	else if($user_choice == $computer){
 		$answer .= 'draw.';
 	}
 	else if($user_choice == 'rock' && $computer == 'scissors'){

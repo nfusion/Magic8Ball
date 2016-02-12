@@ -33,6 +33,7 @@ $allanswers = array(
 'Very doubtful.',
 'Who knows?',
 'Without a doubt.',
+'WTF?',
 'Yes - definitely.',
 'Yes, in due time.',
 'Yes.',
